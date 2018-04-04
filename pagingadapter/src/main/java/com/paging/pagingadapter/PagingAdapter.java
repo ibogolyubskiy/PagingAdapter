@@ -71,6 +71,11 @@ public abstract class PagingAdapter<T> extends AbstractPagingAdapter {
         return Collections.unmodifiableList(mItems);
     }
 
+    public void setItems(List<T> items) {
+        mItems = items;
+        notifyDataSetChanged();
+    }
+
     @Override
     public int getPagedItemCount() {
         return mItems.size();

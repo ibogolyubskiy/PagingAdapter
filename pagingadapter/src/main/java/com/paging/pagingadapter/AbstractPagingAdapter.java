@@ -1,10 +1,9 @@
 package com.paging.pagingadapter;
 
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
-
-import java.util.List;
 
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
@@ -12,10 +11,10 @@ import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
 public abstract class AbstractPagingAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     public final static int NORMAL_VIEW_TYPE = 0;
-    public final static int LOADING_VIEW_TYPE = 0x70000000;
+    public final static int LOADING_VIEW_TYPE = Integer.MAX_VALUE;
 
     /*
-    Proxy for getItemCount. Must return the current ammount of mItems in the RecyclerView
+    Proxy for getItemCount. Must return the current amount of mItems in the RecyclerView
      */
     public abstract int getPagedItemCount();
     /*
@@ -59,8 +58,9 @@ public abstract class AbstractPagingAdapter extends RecyclerView.Adapter<Recycle
         notifyDataSetChanged();
     }
 
+    @NonNull
     @Override
-    public final RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public final RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         if (viewType >= NORMAL_VIEW_TYPE && viewType < LOADING_VIEW_TYPE) {
             return onCreateHolder(parent, viewType - NORMAL_VIEW_TYPE);
         } else {
@@ -69,14 +69,8 @@ public abstract class AbstractPagingAdapter extends RecyclerView.Adapter<Recycle
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position, List<Object> payloads) {
-        super.onBindViewHolder(holder, position, payloads);
-    }
-
-    @Override
-    public final void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+    public final void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         if (hasMoreData() && position >= getPagedItemCount()) {
-
             if (!mIsLoading) {
                 mIsLoading = true;
                 if (mPagingListener != null) {

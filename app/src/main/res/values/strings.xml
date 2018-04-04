@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">PagedRecyclerView</string>
+    <string name="linear">LinearLayoutManager Sample</string>
+    <string name="grid">GridLayoutManager Sample</string>
+    <string name="staggered">StaggeredGridLayoutManager Sample</string>
+    <string name="start">start</string>
+    <string name="stop">stop</string>
 </resources>
