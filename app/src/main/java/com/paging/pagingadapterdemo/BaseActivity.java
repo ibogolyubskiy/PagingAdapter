@@ -13,7 +13,7 @@ import com.paging.pagingadapter.PagingListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class BaseActivity extends AppCompatActivity implements PagingListener {
+public abstract class BaseActivity extends AppCompatActivity implements PagingListener, Runnable {
 
     protected RecyclerView recyclerView;
     protected SampleAdapter adapter;
@@ -33,18 +33,17 @@ public abstract class BaseActivity extends AppCompatActivity implements PagingLi
 
     @Override
     public void onLoadMore() {
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                if (!adapter.isLoading()) return;
-                List<String> subData = new ArrayList<>();
-                for (int i = 0; i<10; i++) {
-                    subData.add(Integer.toString(100 - (adapter.getPagedItemCount() + i)));
-                }
-                adapter.addAll(subData);
-                adapter.setHasMoreData(adapter.getPagedItemCount() < 100);
-            }
-        }, 5000);
+        handler.postDelayed(this, 5000);
+    }
+
+    @Override
+    public void run() {
+        List<String> subData = new ArrayList<>();
+        for (int i = 0; i<10; i++) {
+            subData.add(Integer.toString(100 - (adapter.getPagedItemCount() + i)));
+        }
+        adapter.addAll(subData);
+        adapter.setHasMoreData(adapter.getPagedItemCount() < 100);
     }
 
     @Override
@@ -81,6 +80,7 @@ public abstract class BaseActivity extends AppCompatActivity implements PagingLi
 
     public void stop(View v) {
         adapter.setPagingListener(null);
+        handler.removeCallbacks(this);
     }
 }
 

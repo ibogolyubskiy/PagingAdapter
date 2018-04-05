@@ -9,7 +9,7 @@ public class GridActivity extends BaseActivity {
 
     @Override
     protected RecyclerView.LayoutManager provideLayoutManager() {
-        GridLayoutManager layoutManager = new GridLayoutManager(this, 2);
+        GridLayoutManager layoutManager = new GridLayoutManager(this, 4);
         layoutManager.setSpanSizeLookup(new PagingSpanSizeLookup(adapter, layoutManager));
         return layoutManager;
     }

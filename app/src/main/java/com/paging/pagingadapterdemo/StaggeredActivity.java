@@ -13,6 +13,6 @@ public class StaggeredActivity extends BaseActivity {
 
     @Override
     protected RecyclerView.LayoutManager provideLayoutManager() {
-        return new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
+        return new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL);
     }
 }
