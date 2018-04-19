@@ -1,4 +1,3 @@
 <resources>
-    <string name="app_name">PagedRecyclerView</string>
     <string name="loading">Loading…</string>
 </resources>
