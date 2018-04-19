@@ -37,7 +37,7 @@ captures/
 .idea/workspace.xml
 .idea/misc.xml
 .idea/modules.xml
-.idea/runCOnfigurations.xml
+.idea/runConfigurations.xml
 .idea/vcs.xml
 .idea/tasks.xml
 .idea/gradle.xml
