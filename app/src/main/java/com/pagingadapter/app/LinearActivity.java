@@ -1,4 +1,4 @@
-package com.paging.pagingadapterdemo;
+package com.pagingadapter.app;
 
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;

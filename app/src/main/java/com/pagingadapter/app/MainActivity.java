@@ -1,4 +1,4 @@
-package com.paging.pagingadapterdemo;
+package com.pagingadapter.app;
 
 import android.content.Intent;
 import android.os.Bundle;

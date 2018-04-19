@@ -1,4 +1,4 @@
-package com.paging.pagingadapterdemo;
+package com.pagingadapter.app;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -8,7 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.paging.pagingadapter.PagingListener;
+import com.pagingadapter.PagingListener;
 
 import java.util.ArrayList;
 import java.util.List;

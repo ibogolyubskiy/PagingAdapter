@@ -1,4 +1,4 @@
-package com.paging.pagingadapter;
+package com.pagingadapter;
 
 import java.util.ArrayList;
 import java.util.Collections;

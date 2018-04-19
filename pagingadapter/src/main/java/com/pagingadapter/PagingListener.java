@@ -1,4 +1,4 @@
-package com.paging.pagingadapter;
+package com.pagingadapter;
 
 public interface PagingListener {
     void onLoadMore();

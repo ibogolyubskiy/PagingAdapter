@@ -1,4 +1,4 @@
-package com.paging.pagingadapter;
+package com.pagingadapter;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;

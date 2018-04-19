@@ -1,9 +1,9 @@
-package com.paging.pagingadapter;
+package com.pagingadapter;
 
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import static com.paging.pagingadapter.AbstractPagingAdapter.LOADING_VIEW_TYPE;
+import static com.pagingadapter.AbstractPagingAdapter.LOADING_VIEW_TYPE;
 
 public class PagingSpanSizeLookup extends GridLayoutManager.SpanSizeLookup {
 
